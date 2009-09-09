@@ -1,0 +1,22 @@
+--- origsrc/clutter-gtk-0.10.2/clutter-gtk/Makefile.am	2009-07-28 12:04:12.000000000 -0500
++++ src/clutter-gtk-0.10.2/clutter-gtk/Makefile.am	2009-09-08 00:44:58.226725500 -0500
+@@ -29,7 +29,7 @@ libclutter_gtk_@CLUTTER_GTK_API_VERSION@
+ 	$(srcdir)/gtk-clutter-zoomable.c
+ 
+ libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LIBADD = $(CLUTTER_LIBS) $(GTK_LIBS)
+-libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LDFLAGS = $(CLUTTER_LT_LDFLAGS)
++libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LDFLAGS = $(CLUTTER_GTK_LT_LDFLAGS)
+ 
+ cluttergtkheadersdir = $(includedir)/clutter-1.0/clutter-gtk
+ 
+--- origsrc/clutter-gtk-0.10.2/configure.ac	2009-07-29 06:25:54.000000000 -0500
++++ src/clutter-gtk-0.10.2/configure.ac	2009-09-08 00:39:52.776058200 -0500
+@@ -42,7 +42,7 @@ CLUTTER_GTK_LT_CURRENT=lt_current
+ CLUTTER_GTK_LT_REV=lt_revision
+ CLUTTER_GTK_LT_AGE=lt_age
+ CLUTTER_GTK_LT_VERSION="$CLUTTER_GTK_LT_CURRENT:$CLUTTER_GTK_LT_REV:$CLUTTER_GTK_LT_AGE"
+-CLUTTER_GTK_LT_LDFLAGS="-version-info $CLUTTER_GTK_LT_VERSION"
++CLUTTER_GTK_LT_LDFLAGS="-version-info $CLUTTER_GTK_LT_VERSION -no-undefined"
+ 
+ AC_SUBST(CLUTTER_GTK_LT_VERSION)
+ AC_SUBST(CLUTTER_GTK_LT_LDFLAGS)
