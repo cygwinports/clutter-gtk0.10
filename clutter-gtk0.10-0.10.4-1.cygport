@@ -5,8 +5,7 @@ DESCRIPTION="Clutter GTK+ integration library"
 HOMEPAGE="http://clutter-project.org/"
 SRC_URI="http://www.clutter-project.org/sources/${ORIG_PN}/${PV_MAJ_MIN}/${ORIG_PN}-${PV}.tar.bz2"
 
-PATCH_URI="0.10.2-no-undefined.patch
-           0.10.2-introspection.patch"
+PATCH_URI="0.10.2-no-undefined.patch"
 
 PKG_NAMES="${PN} lib${PN}_0 lib${PN}-devel girepository-GtkClutter0.10"
 libclutter_gtk0_10_0_CONTENTS="usr/bin/*-0.10-0.dll usr/share/doc/"
