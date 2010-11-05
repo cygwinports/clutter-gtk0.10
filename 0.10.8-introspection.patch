@@ -1,0 +1,11 @@
+--- origsrc/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2010-11-05 13:40:00.911394600 -0500
++++ src/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2010-11-05 13:48:09.681946800 -0500
+@@ -48,7 +48,7 @@ GtkClutter-@CLUTTER_GTK_API_VERSION@.gir
+ 	$(AM_V_GEN)$(INTROSPECTION_SCANNER) -v \
+ 		--namespace GtkClutter --nsversion=@CLUTTER_GTK_API_VERSION@ \
+ 		--strip-prefix=GtkClutter \
+-		$(INCLUDES) $(AM_CPPFLAGS) \
++		$(INCLUDES) $(AM_CPPFLAGS) $(GTK_CFLAGS) \
+ 		--add-include-path=$(srcdir) --add-include=path=. \
+ 		--include=Clutter-1.0 \
+ 		--include=GdkPixbuf-2.0 \
