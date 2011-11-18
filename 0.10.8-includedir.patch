@@ -1,0 +1,23 @@
+Make sure we can safely install 0.10 and 1.0 headers without worrying
+about -I order.
+
+--- origsrc/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2011-11-18 00:17:42.953599900 -0600
++++ src/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2011-11-18 00:19:10.432603400 -0600
+@@ -38,7 +38,7 @@ libclutter_gtk_@CLUTTER_GTK_API_VERSION@
+ libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LDFLAGS = $(CLUTTER_GTK_LT_LDFLAGS)
+ libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_CFLAGS = $(MAINTAINER_CFLAGS) $(GTK_CFLAGS) $(CLUTTER_CFLAGS) 
+ 
+-cluttergtkheadersdir = $(includedir)/clutter-1.0/clutter-gtk
++cluttergtkheadersdir = $(includedir)/clutter-gtk-@CLUTTER_GTK_API_VERSION@/clutter-gtk
+ cluttergtkheaders_HEADERS = $(sources_h) $(srcdir)/clutter-gtk.h
+ 
+ if HAVE_INTROSPECTION
+--- origsrc/clutter-gtk-0.10.8/clutter-gtk.pc.in	2010-09-16 07:49:52.000000000 -0500
++++ src/clutter-gtk-0.10.8/clutter-gtk.pc.in	2011-11-18 00:18:20.577751900 -0600
+@@ -10,5 +10,5 @@ Name: clutter-gtk
+ Description: GTK+ integration for Clutter
+ Version: @VERSION@
+ Libs: -L${libdir} -lclutter-gtk-${apiversion}
+-Cflags: -I${includedir}/clutter-${clutterapiversion}
++Cflags: -I${includedir}/clutter-gtk-${apiversion}
+ Requires: @CLUTTER_GTK_REQUIRES@

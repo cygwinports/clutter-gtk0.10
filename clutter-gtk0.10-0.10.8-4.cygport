@@ -9,6 +9,7 @@ PATCH_URI="
 	0.10.8-no-undefined.patch
 	0.10.8-introspection-build.patch
 	0.10.8-introspection-annotations.patch
+	0.10.8-includedir.patch
 "
 
 PKG_NAMES="lib${PN}_0 lib${PN}-devel girepository-GtkClutter0.10"
