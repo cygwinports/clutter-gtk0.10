@@ -5,7 +5,7 @@
  		--namespace GtkClutter --nsversion=@CLUTTER_GTK_API_VERSION@ \
  		--strip-prefix=GtkClutter \
 -		$(INCLUDES) $(AM_CPPFLAGS) \
-+		$(INCLUDES) $(AM_CPPFLAGS) $(CLUTTER_CFLAGS) $(GTK_CFLAGS) \
++		$(INCLUDES) $(AM_CPPFLAGS) $(GTK_CFLAGS) $(CLUTTER_CFLAGS) \
  		--add-include-path=$(srcdir) --add-include=path=. \
  		--include=Clutter-1.0 \
  		--include=GdkPixbuf-2.0 \

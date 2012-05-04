@@ -1,16 +1,20 @@
---- origsrc/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2010-09-16 08:44:00.000000000 -0500
-+++ src/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2010-09-20 22:31:03.937787500 -0500
-@@ -35,7 +35,7 @@ lib_LTLIBRARIES = libclutter-gtk-@CLUTTE
+GTK_* must precede CLUTTER_* because clutter-1.10 includes a gdk3 backend
+
+--- origsrc/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2012-05-04 15:56:00.970730800 -0500
++++ src/clutter-gtk-0.10.8/clutter-gtk/Makefile.am	2012-05-04 15:47:32.044621900 -0500
+@@ -34,8 +34,8 @@ lib_LTLIBRARIES = libclutter-gtk-@CLUTTE
+ 
  # please, keep the list sorted alphabetically
  libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_SOURCES = $(sources_c)
- libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LIBADD = $(CLUTTER_LIBS) $(GTK_LIBS)
+-libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LIBADD = $(CLUTTER_LIBS) $(GTK_LIBS)
 -libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LDFLAGS = $(CLUTTER_LT_LDFLAGS)
++libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LIBADD = $(GTK_LIBS) $(CLUTTER_LIBS)
 +libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LDFLAGS = $(CLUTTER_GTK_LT_LDFLAGS)
  libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_CFLAGS = $(MAINTAINER_CFLAGS) $(GTK_CFLAGS) $(CLUTTER_CFLAGS) 
  
- cluttergtkheadersdir = $(includedir)/clutter-1.0/clutter-gtk
---- origsrc/clutter-gtk-0.10.8/configure.ac	2010-09-16 08:49:08.000000000 -0500
-+++ src/clutter-gtk-0.10.8/configure.ac	2010-09-20 22:30:51.829728700 -0500
+ cluttergtkheadersdir = $(includedir)/clutter-gtk-@CLUTTER_GTK_API_VERSION@/clutter-gtk
+--- origsrc/clutter-gtk-0.10.8/configure.ac	2012-05-04 15:56:00.974731000 -0500
++++ src/clutter-gtk-0.10.8/configure.ac	2012-05-04 14:57:27.000000000 -0500
 @@ -43,7 +43,7 @@ CLUTTER_GTK_LT_CURRENT=lt_current
  CLUTTER_GTK_LT_REV=lt_revision
  CLUTTER_GTK_LT_AGE=lt_age
@@ -20,3 +24,16 @@
  
  AC_SUBST(CLUTTER_GTK_LT_VERSION)
  AC_SUBST(CLUTTER_GTK_LT_LDFLAGS)
+--- origsrc/clutter-gtk-0.10.8/doc/reference/Makefile.am	2010-09-16 07:49:52.000000000 -0500
++++ src/clutter-gtk-0.10.8/doc/reference/Makefile.am	2012-05-04 15:48:00.689260200 -0500
+@@ -71,8 +71,8 @@ expand_content_files=
+ # e.g. INCLUDES=-I$(top_srcdir) -I$(top_builddir) $(GTK_DEBUG_FLAGS)
+ # e.g. GTKDOC_LIBS=$(top_builddir)/gtk/$(gtktargetlib)
+ 
+-INCLUDES=-I$(top_srcdir) $(CLUTTER_CFLAGS) $(GTK_CFLAGS)
+-GTKDOC_LIBS=$(top_builddir)/clutter-gtk/libclutter-gtk-$(CLUTTER_GTK_API_VERSION).la $(CLUTTER_LIBS) $(GTK_LIBS)
++INCLUDES=-I$(top_srcdir) $(GTK_CFLAGS) $(CLUTTER_CFLAGS)
++GTKDOC_LIBS=$(top_builddir)/clutter-gtk/libclutter-gtk-$(CLUTTER_GTK_API_VERSION).la $(GTK_LIBS) $(CLUTTER_LIBS)
+ 
+ # This includes the standard gtk-doc make rules, copied by gtkdocize.
+ include $(top_srcdir)/gtk-doc.make

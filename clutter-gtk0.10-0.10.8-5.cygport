@@ -18,3 +18,5 @@ libclutter_gtk0_10_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ 
 girepository_GtkClutter0_10_CONTENTS="usr/*/gir*/GtkClutter-0.10.*"
 
 CYGCONF_ARGS="--with-flavour=x11"
+
+KEEP_LA_FILES="none"
