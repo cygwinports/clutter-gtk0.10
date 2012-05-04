@@ -24,6 +24,15 @@ GTK_* must precede CLUTTER_* because clutter-1.10 includes a gdk3 backend
  
  AC_SUBST(CLUTTER_GTK_LT_VERSION)
  AC_SUBST(CLUTTER_GTK_LT_LDFLAGS)
+@@ -71,7 +71,7 @@ AS_CASE([$with_flavour],
+           AC_DEFINE([HAVE_CLUTTER_GTK_X11], 1, [Using the X11 flavour])
+           PKG_CHECK_MODULES(CLUTTER, clutter-x11-1.0 >= clutter_req_version)
+           PKG_CHECK_MODULES(GTK, gtk+-x11-2.0 >= gtk_req_version)
+-          CLUTTER_GTK_REQUIRES="clutter-x11-1.0 gtk+-x11-2.0"
++          CLUTTER_GTK_REQUIRES="gtk+-x11-2.0 clutter-x11-1.0"
+         ],
+ 
+         [win32], [
 --- origsrc/clutter-gtk-0.10.8/doc/reference/Makefile.am	2010-09-16 07:49:52.000000000 -0500
 +++ src/clutter-gtk-0.10.8/doc/reference/Makefile.am	2012-05-04 15:48:00.689260200 -0500
 @@ -71,8 +71,8 @@ expand_content_files=
