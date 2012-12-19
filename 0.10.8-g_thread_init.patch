@@ -1,0 +1,11 @@
+--- origsrc/clutter-gtk-0.10.8/examples/gtk-clutter-viewport.c	2010-09-16 07:49:53.000000000 -0500
++++ src/clutter-gtk-0.10.8/examples/gtk-clutter-viewport.c	2012-12-18 20:38:28.807548600 -0600
+@@ -36,8 +36,6 @@ main (int argc, char *argv[])
+   GtkWidget       *table, *scrollbar, *slider;
+   GtkAdjustment   *h_adjustment, *v_adjustment, *z_adjustment;
+ 
+-  g_thread_init (NULL);
+-  gdk_threads_init ();
+   clutter_threads_init ();
+ 
+   if (gtk_clutter_init (&argc, &argv) != CLUTTER_INIT_SUCCESS)
