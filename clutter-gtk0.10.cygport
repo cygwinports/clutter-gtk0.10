@@ -3,8 +3,8 @@ inherit gnome2
 
 NAME="clutter-gtk0.10"
 VERSION=0.10.8
-RELEASE=6
-CATEGORY="GNOME"
+RELEASE=7
+CATEGORY="Libs"
 SUMMARY="OpenGL-based animated GTK+ GUI library"
 DESCRIPTION="Clutter is an open source software library for creating fast,
 visually rich and animated graphical user interfaces. Clutter uses OpenGL for
@@ -21,7 +21,7 @@ PATCH_URI="
 	0.10.8-g_thread_init.patch
 "
 
-PKG_NAMES="lib${PN}_0 lib${PN}-devel girepository-GtkClutter0.10"
+PKG_NAMES="lib${NAME}_0 lib${NAME}-devel girepository-GtkClutter0.10"
 libclutter_gtk0_10_0_CONTENTS="usr/bin/*-0.10-0.dll usr/share/doc/"
 libclutter_gtk0_10_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 girepository_GtkClutter0_10_CONTENTS="usr/*/gir*/GtkClutter-0.10.*"
