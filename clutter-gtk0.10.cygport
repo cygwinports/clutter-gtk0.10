@@ -3,7 +3,7 @@ inherit gnome2
 
 NAME="clutter-gtk0.10"
 VERSION=0.10.8
-RELEASE=8
+RELEASE=9
 CATEGORY="Libs"
 SUMMARY="OpenGL-based animated GTK+ GUI library"
 DESCRIPTION="Clutter is an open source software library for creating fast,
